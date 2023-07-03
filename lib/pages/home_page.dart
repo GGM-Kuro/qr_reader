@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/pages.dart';
+import 'package:qr_reader/providers/db_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 import 'package:qr_reader/widgets/widgets.dart';
 
@@ -35,9 +36,14 @@ class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+        // NOTE: Obtener el select menu opt
         final uiProvider = Provider.of<UiProvider>(context);
 
+        // NOTE:  Cambiar para mostrar la pagina respectiva
         final currentIndex = uiProvider.selectedMenuOpt;
+
+        // TODO: Leer la base de datos
+        DBProvider.db.database;
 
         switch (currentIndex) {
                   case 0:
